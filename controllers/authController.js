@@ -4,12 +4,12 @@ module.exports = {
   login: async (req, res) => {
     const accessToken = randomBytes(64).toString("hex");
     const refreshToken = randomBytes(64).toString("hex");
-    console.log(req.headers);
-    // res.cookie("accessToken", accessToken, {
-    //   maxAge: 1000 * 60 * 5,
-    //   httpOnly: true,
-    //   secure: true,
-    // });
+    res.cookie("accessToken", accessToken, {
+      maxAge: 1000 * 60 * 5,
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+    });
     res.cookie("refreshToken", refreshToken, {
       maxAge: 1000 * 60 * 60 * 24,
       httpOnly: true,
