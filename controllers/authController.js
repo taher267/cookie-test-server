@@ -33,6 +33,6 @@ module.exports = {
       secure: true,
     });
     const cookies = req.cookies;
-    res.status(202).json(cookies);
+    res.json(cookies);
   },
 };
