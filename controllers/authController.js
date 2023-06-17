@@ -5,17 +5,18 @@ module.exports = {
     const accessToken = randomBytes(64).toString("hex");
     const refreshToken = randomBytes(64).toString("hex");
     console.log(req.headers);
-    res.cookie("accessToken", accessToken, {
-      maxAge: 1000 * 60 * 5,
-      httpOnly: true,
-      secure: true,
-    });
+    // res.cookie("accessToken", accessToken, {
+    //   maxAge: 1000 * 60 * 5,
+    //   httpOnly: true,
+    //   secure: true,
+    // });
     res.cookie("refreshToken", refreshToken, {
       maxAge: 1000 * 60 * 60 * 24,
       httpOnly: true,
       secure: true,
+      sameSite: "none",
     });
-    res.json({ accessToken, refreshToken });
+    res.json({ refreshToken });
   },
   getCredentials: async (req, res) => {
     console.log(req.headers);

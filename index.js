@@ -13,6 +13,14 @@ const middleware = [
         origin: ["https://cookie-test.netlify.app", "http://localhost:5173"],
     }),
 ];
+app.get("/", (req, res) => {
+    res.cookie("test", "vafjskdfjdskafjksajfskdjfksdaj", {
+        sameSite: "none",
+        maxAge: 99999999999999,
+        signed: true,
+    });
+    res.json({});
+});
 
 app.use(middleware);
 app.use(require("./routes"));
