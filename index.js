@@ -9,7 +9,7 @@ const middleware = [
     require("morgan")("dev"),
     require("cors")({
         credentials: true,
-        origin: ["http://localhost:5173"],
+        origin: ["https://cookie-test.netlify.app", "http://localhost:5173"],
     }),
 ];
 
