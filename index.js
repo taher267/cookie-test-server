@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
     res.cookie("test", "vafjskdfjdskafjksajfskdjfksdaj", {
         sameSite: "none",
         maxAge: 99999999999999,
-        signed: true,
+        // signed: true,
     });
     res.json({});
 });
