@@ -24,16 +24,8 @@ module.exports = {
     res.status(202).json(cookies);
   },
   logout: async (req, res) => {
-    res.clearCookie("accessToken", {
-      maxAge: 0,
-      httpOnly: true,
-      sameSite: "none",
-    });
-    res.clearCookie("refreshToken", {
-      sameSite: "none",
-      maxAge: 0,
-      httpOnly: true,
-    });
+    res.clearCookie("accessToken");
+    res.clearCookie("refreshToken");
     const cookies = req.cookies;
     res.status(202).json(cookies);
   },
