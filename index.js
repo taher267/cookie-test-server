@@ -8,8 +8,9 @@ const middleware = [
     cookieParser(),
     require("morgan")("dev"),
     require("cors")({
-        credentials: true,
-        origin: ["https://cookie-test.netlify.app", "http://localhost:5173"],
+        // credentials: true,
+        origin: '*',
+        // origin: ["https://cookie-test.netlify.app", "http://localhost:5173"],
     }),
 ];
 
