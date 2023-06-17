@@ -27,8 +27,10 @@ module.exports = {
     res.clearCookie("accessToken", {
       maxAge: 0,
       httpOnly: true,
+      sameSite: "none",
     });
     res.clearCookie("refreshToken", {
+      sameSite: "none",
       maxAge: 0,
       httpOnly: true,
     });
