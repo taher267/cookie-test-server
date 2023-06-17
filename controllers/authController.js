@@ -17,6 +17,7 @@ module.exports = {
     res.json({ accessToken, refreshToken });
   },
   getCredentials: async (req, res) => {
+    console.log(req.headers);
     const cookies = req.cookies;
     res.status(202).json(cookies);
   },
