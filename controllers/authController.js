@@ -7,12 +7,12 @@ module.exports = {
     res.cookie("accessToken", accessToken, {
       maxAge: 1000 * 60 * 5,
       httpOnly: true,
-      secure: false,
+      secure: true,
     });
     res.cookie("refreshToken", refreshToken, {
       maxAge: 1000 * 60 * 60 * 24,
       httpOnly: true,
-      secure: false,
+      secure: true,
     });
     res.json({ accessToken, refreshToken });
   },
